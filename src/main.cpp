@@ -63,6 +63,7 @@ void update() {
     }
     counter++;
 }
+
 SDL_Rect rect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
 void draw() {
     SDL_SetRenderDrawColor(renderer, 1, 5, 136, 255);
@@ -73,4 +74,3 @@ void draw() {
     SDL_RenderPresent(renderer);
     counter++;
 }
-
