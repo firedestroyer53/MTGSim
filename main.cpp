@@ -12,7 +12,7 @@ Pile deck;
 Pile play;
 Pile graveyard;
 int main(int argc, char *argv[]) {
-
+    
     if (!initializeSDL(SCREEN_WIDTH, SCREEN_HEIGHT)) {
         return 1;
     }

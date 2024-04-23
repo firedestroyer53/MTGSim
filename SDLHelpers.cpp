@@ -8,6 +8,7 @@ SDL_Renderer *renderer = nullptr;
 SDL_Window *window = nullptr;
 vector<SDL_Texture *> textures;
 
+
 bool initializeSDL(const int SCREEN_WIDTH, const int SCREEN_HEIGHT) {
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         std::cerr << "SDL could not initialize! SDL_Error: " << SDL_GetError() << std::endl;
