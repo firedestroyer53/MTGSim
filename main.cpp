@@ -50,20 +50,19 @@ void loadContent() {
 
 int counter = 0;
 void update() {
-    if(play.cards.size() == 1 && counter % 10000 == 0) {
-        play.drawTo(graveyard);
+    if (counter % 10000 == 0) {
+        if (play.cards.size() == 1) {
+            play.drawTo(graveyard);
+        }
+        deck.drawTo(play);
     }
-    if(deck.cards.size() == 0) {
-        while(graveyard.cards.size() > 0) {
+    if (deck.cards.size() == 0) {
+        while (graveyard.cards.size() > 0) {
             graveyard.drawTo(deck);
         }
     }
-    if(counter % 10000 == 0) {
-        deck.drawTo(play);
-    }
     counter++;
 }
-
 SDL_Rect rect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
 void draw() {
     SDL_SetRenderDrawColor(renderer, 1, 5, 136, 255);

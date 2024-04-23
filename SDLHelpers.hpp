@@ -10,9 +10,9 @@
 using std::vector;
 using std::string;
 
-SDL_Renderer* renderer = nullptr;
-SDL_Window* window = nullptr;
-vector<SDL_Texture*> textures;
+extern SDL_Renderer* renderer;
+extern SDL_Window* window;
+extern vector<SDL_Texture*> textures;
 
 bool initializeSDL(const int SCREEN_WIDTH, const int SCREEN_HEIGHT);
 void closeSDL();
