@@ -68,3 +68,4 @@ for card_name in card_names:
     bmp_save_path = os.path.join(bmp_folder, f"{card_name.replace(' ', '')}.bmp")
     convert_to_bmp(save_path, bmp_save_path)
     print()  # Add an empty line for readability in the console
+    
