@@ -2,25 +2,30 @@
 #define STACK_HPP
 
 #include <vector>
-#include "Effect.hpp" // Include full definition of Effect
+#include "Effect.hpp" 
 
 using std::vector;
 
 struct Stack {
-    vector<Effect> stack;
+    vector<Effect*> stack;
     
     Stack() : stack() {}
     
-    Stack(const vector<Effect>& effects) : stack(effects) {}
-
-    Effect pop() {
-        Effect effect = stack[0];
-        stack.erase(stack.begin());
-        return effect;
+    Stack(const vector<Effect*>& effects) {
+        stack = effects;
     }
 
-    void push(Effect effect) {
-        stack.insert(stack.begin(), effect);
+    Effect* pop() {
+        if (!stack.empty()) {
+            Effect* effect = stack.back();
+            stack.pop_back();
+            return effect;
+        }
+        return nullptr;
+    }
+
+    void push(Effect* effect) {
+        stack.push_back(effect);
     }
 };
 
