@@ -9,6 +9,12 @@
 
 #include <map>
 
+struct Effect;
+struct Pile;
+struct Counter;
+struct Stack;
+
+
 enum Phase {
     untapStep,
     upkeepStep,
@@ -53,7 +59,7 @@ struct GameState {
 
     Stack stack;
 
-    Effect lastGameAction;
+    Effect* lastGameAction;
 };
 
 #endif // GAMESTATE_HPP

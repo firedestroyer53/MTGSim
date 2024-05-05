@@ -4,6 +4,8 @@
 #include <vector>
 #include "Effect.hpp" 
 
+struct Effect;
+
 using std::vector;
 
 struct Stack {
@@ -11,7 +13,7 @@ struct Stack {
     
     Stack() : stack() {}
     
-    Stack(const vector<Effect*>& effects) {
+    Stack(vector<Effect*> effects) {
         stack = effects;
     }
 
