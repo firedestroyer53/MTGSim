@@ -1,0 +1,12 @@
+// users define variables here, ints only probably
+var = 0
+
+// Standardized functions that are in built in:
+onDraw:
+    //do these things, code would look something like this. THe user would create an effect, and then add it onto the stack        
+onPermanentEnter:
+
+onAttack:
+
+onCast:
+

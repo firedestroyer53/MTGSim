@@ -1,9 +1,13 @@
-#include "GameState.hpp"
+#ifndef EFFECT_HPP
+#define EFFECT_HPP
 
 
-struct Effect {
-    GameState interact(GameState currentState) {
+struct GameState;
 
-    }
 
+class Effect {
+public:
+    GameState interact(GameState gameState);
 };
+
+#endif // !EFFECT_HPP

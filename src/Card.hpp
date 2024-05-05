@@ -25,6 +25,7 @@ struct Card {
         cardTexture = texture;
         displayName = name;
         cardName = removeSpaces(name);
+        effect = Effect();
     }
     Card(Effect effect, string name, SDL_Texture *texture) {
         cardTexture = texture;
