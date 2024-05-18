@@ -10,3 +10,28 @@ onAttack:
 
 onCast:
 
+
+
+/*
+Functions like onCast or whatever, will be like this when translated to C++
+There will really be only one function in the C++ code, interact, which is run every game action.
+However, the user can still implement functions for when something happens. This will look like this
+
+this code:
+onCast:
+    do thing
+onDraw:
+    do thing
+
+Will turn into this code:
+class ExampleSpell : public Spell {
+    void interact(GameState& gameState) {
+        if (auto spellAction == dynamic_cast<Spell*>(gameState.lastGameAction)) {
+            do thing
+        }
+        if () {
+            
+        }
+    }
+};
+*/

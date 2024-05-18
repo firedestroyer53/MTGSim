@@ -7,9 +7,13 @@
 struct EffectCounter; // Forward declaration
 
 class Effect {
-public:
+protected:
     std::vector<EffectCounter> counters;
-    GameState interact(GameState gameState);
+    void interact(GameState& gameState);
+public:
+    Effect() {
+        
+    }
 };
 
 #endif // !EFFECT_HPP
