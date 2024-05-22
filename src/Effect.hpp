@@ -8,9 +8,13 @@ struct EffectCounter; // Forward declaration
 
 class Effect {
 protected:
+    int owner; // player ID
+    int id; // effect ID
     std::vector<EffectCounter> counters;
     void interact(GameState& gameState);
+    
 public:
+    vector<cardType> types;
     Effect() {
         
     }

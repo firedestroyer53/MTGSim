@@ -37,15 +37,19 @@ enum Mana {
     colorless
 };
 
+enum cardType {
+    creature
+};
+
 struct GameState {
     Phase currentPhase;
     vector<int> playerIDs;
     std::map<int, Pile> decks;
     std::map<int, Pile> graveyards;
     std::map<int, Pile> exiles;
-    std::map<int, Pile> battlefields;
-    std::map<int, Pile> commandZones;
-    std::map<int, Pile> phasedOut;
+    vector<Effect> battlefield;
+    vector<Effect> commandZones;
+    vector<Effect> phasedOut;
     std::map<int, Pile> hands;
     std::map<int, int> lifeTotals;
     std::map<int, std::map<int, Mana>> manaPools;
