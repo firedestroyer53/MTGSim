@@ -24,26 +24,28 @@ class Spell : public Effect {
 
 class LightningBolt : public Spell {
     int targetID;
+    vector<int> validTargets
     void interact(GameState& gameState) {
 
     }
     void onCast(GameState& gameState) {
         // get legal targets
-        vector<int> targets;
         for (Effect e : gameState.battlefield) {
             if (vectorContains(e.types, cardType::creature)) {
-                targets.push_back(e.id);
+                validTargets.push_back(e.id);
             }
         }
         for (int player : gameState.playerIDs) {
-            targets.push_back(player);
+            validTargets.push_back(player);
         }
         // prompt the user somehow, for now just choose first target
-        targetID = targets[0];
-        // add the spell to the stack
-        gameState.stack.push(this);
+        targetID = validTargets[0];        
+
+        gameState.stack.push(&this);
     }
-    void onResolve() {
-        
+    void onResolve(GameState& gameState) {
+        if(vectorContains(validTargets, targetID)) { // check if still valid
+            this->dealDamage(gameState, targetID, 3);
+        }
     }
 };
