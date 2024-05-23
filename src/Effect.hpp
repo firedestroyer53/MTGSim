@@ -2,9 +2,9 @@
 #define EFFECT_HPP
 
 #include <vector>
-#include "GameState.hpp" // Assuming GameState is defined elsewhere
+#include "GameState.hpp" 
 
-struct EffectCounter; // Forward declaration
+struct EffectCounter;
 
 class Effect {
 protected:

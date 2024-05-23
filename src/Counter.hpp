@@ -1,7 +1,7 @@
 #ifndef COUNTER_HPP
 #define COUNTER_HPP
 
-struct Effect; // Forward declaration
+struct Effect;
 
 struct EffectCounter {
     Effect *attachedTo;
