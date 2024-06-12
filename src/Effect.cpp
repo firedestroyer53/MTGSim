@@ -31,7 +31,7 @@ class LightningBolt : public Spell {
     void onCast(GameState& gameState) {
         // get legal targets
         for (Effect e : gameState.battlefield) {
-            if (vectorContains(e.types, cardType::creature)) {
+            if (vectorContains(e.types, cardType::creature) || vectorContains(e.types, cardType::planeswalker)) {
                 validTargets.push_back(e.id);
             }
         }

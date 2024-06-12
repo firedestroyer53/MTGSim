@@ -21,5 +21,7 @@ public:
         
     }
 };
+class Spell : public Effect{};
+class LightningBolt : public Spell{};
 
 #endif // !EFFECT_HPP

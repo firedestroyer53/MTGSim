@@ -44,6 +44,8 @@ void loadContent() {
 
 int counter = 0;
 void update() {
+    LightningBolt bolt;
+    
 }
 
 void draw() {

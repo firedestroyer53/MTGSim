@@ -38,7 +38,8 @@ enum Mana {
 };
 
 enum cardType {
-    creature
+    creature,
+    planeswalker
 };
 
 struct GameState {

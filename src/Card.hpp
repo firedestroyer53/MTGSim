@@ -13,25 +13,23 @@ struct Card {
     SDL_Texture *cardTexture;
     string cardName;
     string displayName;
-    Effect effect;
+    Effect *effect;
 
     Card() {}
     Card(string name) {
         displayName = name;
         cardName = removeSpaces(name);
-        effect = Effect();
     }
     Card(string name, SDL_Texture *texture){
         cardTexture = texture;
         displayName = name;
         cardName = removeSpaces(name);
-        effect = Effect();
     }
     Card(Effect effect, string name, SDL_Texture *texture) {
         cardTexture = texture;
         displayName = name;
         cardName = removeSpaces(name);
-        this->effect = effect;
+        this->effect = &effect;
     }
 };
 
